@@ -161,22 +161,22 @@ class _WeatherPageState extends State<WeatherPage>
   Color _getWeatherColor(String condition) {
     switch (condition.toLowerCase()) {
       case 'clear':
-        return const Color(0xFFFFB347);
+        return const Color(0xFF1E3A8A); // Dark blue
       case 'clouds':
-        return const Color(0xFF87CEEB);
+        return const Color(0xFF1E40AF); // Dark blue
       case 'rain':
-        return const Color(0xFF4682B4);
+        return const Color(0xFF1E3A8A); // Dark blue
       case 'drizzle':  
-        return const Color(0xFF708090);
+        return const Color(0xFF1E40AF); // Dark blue
       case 'thunderstorm':
-        return const Color(0xFF483D8B);
+        return const Color(0xFF1E3A8A); // Dark blue
       case 'snow':
-        return const Color(0xFFE6E6FA);
+        return const Color(0xFF1E40AF); // Dark blue
       case 'mist':
       case 'fog':
-        return const Color(0xFFD3D3D3);
+        return const Color(0xFF1E3A8A); // Dark blue
       default:
-        return const Color(0xFF87CEEB);
+        return const Color(0xFF1E40AF); // Dark blue
     }
   }
 
@@ -255,7 +255,14 @@ class _WeatherPageState extends State<WeatherPage>
                 style: const TextStyle(
                   color: Colors.white,
                   fontSize: 16,
-                  fontWeight: FontWeight.w500,
+                  fontWeight: FontWeight.w600,
+                  shadows: [
+                    Shadow(
+                      offset: Offset(1.0, 1.0),
+                      blurRadius: 3.0,
+                      color: Colors.black26,
+                    ),
+                  ],
                 ),
                 textAlign: TextAlign.center,
               ),
@@ -317,14 +324,29 @@ class _WeatherPageState extends State<WeatherPage>
                         style: const TextStyle(
                           color: Colors.white,
                           fontSize: 18,
-                          fontWeight: FontWeight.w600,
+                          fontWeight: FontWeight.w700,
+                          shadows: [
+                            Shadow(
+                              offset: Offset(1.0, 1.0),
+                              blurRadius: 3.0,
+                              color: Colors.black26,
+                            ),
+                          ],
                         ),
                       ),
                       Text(
                         currentDate,
-                        style: TextStyle(
-                          color: Colors.white.withOpacity(0.8),
+                        style: const TextStyle(
+                          color: Colors.white,
                           fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                          shadows: [
+                            Shadow(
+                              offset: Offset(1.0, 1.0),
+                              blurRadius: 3.0,
+                              color: Colors.black26,
+                            ),
+                          ],
                         ),
                       ),
                     ],
@@ -334,7 +356,14 @@ class _WeatherPageState extends State<WeatherPage>
                     style: const TextStyle(
                       color: Colors.white,
                       fontSize: 18,
-                      fontWeight: FontWeight.w300,
+                      fontWeight: FontWeight.w500,
+                      shadows: [
+                        Shadow(
+                          offset: Offset(1.0, 1.0),
+                          blurRadius: 3.0,
+                          color: Colors.black26,
+                        ),
+                      ],
                     ),
                   ),
                 ],
@@ -354,26 +383,47 @@ class _WeatherPageState extends State<WeatherPage>
                         style: const TextStyle(
                           color: Colors.white,
                           fontSize: 72,
-                          fontWeight: FontWeight.w200,
+                          fontWeight: FontWeight.w300,
                           height: 0.9,
+                          shadows: [
+                            Shadow(
+                              offset: Offset(2.0, 2.0),
+                              blurRadius: 4.0,
+                              color: Colors.black26,
+                            ),
+                          ],
                         ),
                       ),
                       Text(
                         description.toUpperCase(),
-                        style: TextStyle(
-                          color: Colors.white.withOpacity(0.9),
+                        style: const TextStyle(
+                          color: Colors.white,
                           fontSize: 14,
-                          fontWeight: FontWeight.w500,
+                          fontWeight: FontWeight.w600,
                           letterSpacing: 1.2,
+                          shadows: [
+                            Shadow(
+                              offset: Offset(1.0, 1.0),
+                              blurRadius: 3.0,
+                              color: Colors.black26,
+                            ),
+                          ],
                         ),
                       ),
                       const SizedBox(height: 8),
                       Text(
                         'H: ${tempMax.toStringAsFixed(0)}°  L: ${tempMin.toStringAsFixed(0)}°',
-                        style: TextStyle(
-                          color: Colors.white.withOpacity(0.7),
+                        style: const TextStyle(
+                          color: Colors.white,
                           fontSize: 16,
-                          fontWeight: FontWeight.w400,
+                          fontWeight: FontWeight.w500,
+                          shadows: [
+                            Shadow(
+                              offset: Offset(1.0, 1.0),
+                              blurRadius: 3.0,
+                              color: Colors.black26,
+                            ),
+                          ],
                         ),
                       ),
                     ],
@@ -420,22 +470,36 @@ class _WeatherPageState extends State<WeatherPage>
   Widget _buildWeatherDetail(IconData icon, String value, String label) {
     return Column(
       children: [
-        Icon(icon, color: Colors.white.withOpacity(0.8), size: 24),
+        Icon(icon, color: Colors.white, size: 24),
         const SizedBox(height: 8),
         Text(
           value,
           style: const TextStyle(
             color: Colors.white,
             fontSize: 16,
-            fontWeight: FontWeight.w600,
+            fontWeight: FontWeight.w700,
+            shadows: [
+              Shadow(
+                offset: Offset(1.0, 1.0),
+                blurRadius: 3.0,
+                color: Colors.black26,
+              ),
+            ],
           ),
         ),
         Text(
           label,
-          style: TextStyle(
-            color: Colors.white.withOpacity(0.7),
+          style: const TextStyle(
+            color: Colors.white,
             fontSize: 12,
-            fontWeight: FontWeight.w400,
+            fontWeight: FontWeight.w500,
+            shadows: [
+              Shadow(
+                offset: Offset(1.0, 1.0),
+                blurRadius: 3.0,
+                color: Colors.black26,
+              ),
+            ],
           ),
         ),
       ],
@@ -467,11 +531,18 @@ class _WeatherPageState extends State<WeatherPage>
         children: [
           Text(
             'HOURLY FORECAST',
-            style: TextStyle(
-              color: Colors.white.withOpacity(0.8),
+            style: const TextStyle(
+              color: Colors.white,
               fontSize: 13,
-              fontWeight: FontWeight.w600,
+              fontWeight: FontWeight.w700,
               letterSpacing: 1.2,
+              shadows: [
+                Shadow(
+                  offset: Offset(1.0, 1.0),
+                  blurRadius: 3.0,
+                  color: Colors.black26,
+                ),
+              ],
             ),
           ),
           const SizedBox(height: 15),
@@ -491,10 +562,17 @@ class _WeatherPageState extends State<WeatherPage>
                     children: [
                       Text(
                         time,
-                        style: TextStyle(
-                          color: Colors.white.withOpacity(0.7),
+                        style: const TextStyle(
+                          color: Colors.white,
                           fontSize: 14,
-                          fontWeight: FontWeight.w400,
+                          fontWeight: FontWeight.w500,
+                          shadows: [
+                            Shadow(
+                              offset: Offset(1.0, 1.0),
+                              blurRadius: 3.0,
+                              color: Colors.black26,
+                            ),
+                          ],
                         ),
                       ),
                       const SizedBox(height: 12),
@@ -516,7 +594,14 @@ class _WeatherPageState extends State<WeatherPage>
                         style: const TextStyle(
                           color: Colors.white,
                           fontSize: 16,
-                          fontWeight: FontWeight.w600,
+                          fontWeight: FontWeight.w700,
+                          shadows: [
+                            Shadow(
+                              offset: Offset(1.0, 1.0),
+                              blurRadius: 3.0,
+                              color: Colors.black26,
+                            ),
+                          ],
                         ),
                       ),
                     ],
@@ -556,7 +641,14 @@ class _WeatherPageState extends State<WeatherPage>
           style: TextStyle(
             color: Colors.white,
             fontSize: 28,
-            fontWeight: FontWeight.w300,
+            fontWeight: FontWeight.w500,
+            shadows: [
+              Shadow(
+                offset: Offset(1.0, 1.0),
+                blurRadius: 3.0,
+                color: Colors.black26,
+              ),
+            ],
           ),
         ),
         centerTitle: false,
@@ -585,9 +677,9 @@ class _WeatherPageState extends State<WeatherPage>
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              _getWeatherColor(bgCondition).withOpacity(0.8),
-              _getWeatherColor(bgCondition).withOpacity(0.6),
-              _getWeatherColor(bgCondition).withOpacity(0.4),
+              const Color(0xFF0F172A), // Very dark blue
+              const Color(0xFF1E293B), // Dark blue-gray
+              const Color(0xFF334155), // Medium blue-gray
             ],
           ),
         ),
@@ -607,12 +699,31 @@ class _WeatherPageState extends State<WeatherPage>
                 child: TextField(
                   controller: _controller,
                   onSubmitted: (value) => fetchWeather(value.trim()),
-                  style: const TextStyle(color: Colors.white, fontSize: 16),
+                  style: const TextStyle(
+                    color: Colors.white, 
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                    shadows: [
+                      Shadow(
+                        offset: Offset(1.0, 1.0),
+                        blurRadius: 3.0,
+                        color: Colors.black26,
+                      ),
+                    ],
+                  ),
                   decoration: InputDecoration(
                     hintText: 'Search for a city...',
-                    hintStyle: TextStyle(
-                      color: Colors.white.withOpacity(0.7),
+                    hintStyle: const TextStyle(
+                      color: Colors.white,
                       fontSize: 16,
+                      fontWeight: FontWeight.w400,
+                      shadows: [
+                        Shadow(
+                          offset: Offset(1.0, 1.0),
+                          blurRadius: 3.0,
+                          color: Colors.black26,
+                        ),
+                      ],
                     ),
                     border: InputBorder.none,
                     contentPadding: const EdgeInsets.symmetric(
